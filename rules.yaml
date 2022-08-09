@@ -4,12 +4,12 @@ features:
       - match: module
         prefix: "{{.Module.Name|snake}}/"
         documents:
-          - source: "api/index.ts.tmpl"
+          - source: "api/index.ts.tpl"
             target: "api/index.ts"
   - name: scaffold
     scopes:
       - match: interface
         prefix: "{{.Module.Name|snake}}/"
         documents:
-          - source: "scaffold/interface.ts.tmpl"
+          - source: "scaffold/interface.ts.tpl"
             target: "impl/{{Camel .Interface.Name}}.ts"
