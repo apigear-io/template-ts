@@ -4,7 +4,7 @@ features:
       - match: module
         prefix: "{{.Module.Name|snake}}/"
         documents:
-          - source: "api/index.ts.tpl"
+          - source: "api/module.ts.tpl"
             target: "api/index.ts"
   - name: scaffold
     scopes:
@@ -13,3 +13,15 @@ features:
         documents:
           - source: "scaffold/interface.ts.tpl"
             target: "impl/{{Camel .Interface.Name}}.ts"
+  - name: http
+    scopes:
+      - match: module
+        documents:
+          - source: "http/module.ts.tpl"
+            target: "http/{{snake .Module.Name}}.ts"
+  - name: olink
+    scopes:
+      - match: module
+        documents:
+          - source: "olink/module.ts.tpl"
+            target: "olink/{{snake .Module.Name}}.ts"
